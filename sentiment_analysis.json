@@ -1,0 +1,14 @@
+{
+    "name": "Sentiment Analysis", 
+    "id_name": "sentimentanalysis",
+    "category": "Text", 
+    "icon": "",
+    "description": "Select a column to run sentiment analysis on, which indicates how negative or positive the comment is.",
+    "parameters": [
+        {
+            "name": "Column", 
+            "id_name": "textcolumn", 
+            "type": "string"
+        }
+    ]
+}
