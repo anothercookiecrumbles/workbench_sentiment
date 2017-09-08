@@ -3,7 +3,7 @@
     "id_name": "sentimentanalysis",
     "category": "Text", 
     "icon": "",
-    "description": "Select a column to run sentiment analysis on, which indicates how negative or positive the comment is.",
+    "description": "Select a column to run sentiment analysis on. Sentiment analysis indicates how negative or positive the text is.",
     "parameters": [
         {
             "name": "Column", 
