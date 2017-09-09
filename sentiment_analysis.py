@@ -22,12 +22,12 @@ def render(wf_module, table):
         wf_module.set_error("No column {} exists.".format(column))
         return None
 
-    data = table[column]
+    all_texts = table[column]
     sentiment = []
 
     sid = SentimentIntensityAnalyzer()
 
-    for text in data:
+    for text in all_texts:
         score = sid.polarity_scores(text)
         sentiment.append(score['compound'])
 
