@@ -7,7 +7,7 @@
     "parameters": [
         {
             "name": "Column", 
-            "id_name": "textcolumn", 
+            "id_name": "column_name", 
             "type": "column"
         }
     ]
