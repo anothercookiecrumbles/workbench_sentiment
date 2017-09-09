@@ -1,7 +1,7 @@
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import pandas as pd
-
 class SentimentAnalyser:
+
+    from nltk.sentiment.vader import SentimentIntensityAnalyzer
+    import pandas as pd
 
     @staticmethod
     def __init__(self):
