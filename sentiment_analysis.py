@@ -9,6 +9,7 @@ def __init__(self):
 def event():
     pass
 
+@staticmethod
 def render(wf_module, table):
     if table == None:
         return None
