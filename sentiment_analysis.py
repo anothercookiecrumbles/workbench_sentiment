@@ -1,7 +1,8 @@
-class SentimentAnalyser:
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import numpy as np
+import pandas as pd
 
-    from nltk.sentiment.vader import SentimentIntensityAnalyzer
-    import pandas as pd
+class SentimentAnalyser:
 
     @staticmethod
     def __init__(self):
@@ -13,10 +14,8 @@ class SentimentAnalyser:
 
     @staticmethod
     def render(wf_module, table):
-        if table == None:
-            return None
 
-        column = wf_module.get_param_string('textcolumn')
+        column = wf_module.get_param_column('column_name')
         if column == '' or column == None:
             wf_module.set_ready(notify=False)
             return None
@@ -31,9 +30,11 @@ class SentimentAnalyser:
         sid = SentimentIntensityAnalyzer()
 
         for text in all_texts:
+            if type(text) != str:
+                text = str(text)
             score = sid.polarity_scores(text)
             sentiment.append(score['compound'])
 
         # add column to existing table
-        table = table.assign(sentiment=pd.Series(sentiment))
+        table = table.assign(sentiment=pd.Series(np.asarray(sentiment, dtype=np.float32)))
         return table
